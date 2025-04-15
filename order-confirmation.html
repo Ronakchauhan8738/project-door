@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - Desi Door Express</title>
+    <meta name="description" content="Thank you for your order with Desi Door Express">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .order-confirmation {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .confirmation-header {
+            background-color: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .order-checkmark {
+            width: 60px;
+            height: 60px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+        }
+        
+        .order-checkmark i {
+            font-size: 30px;
+            color: var(--primary-color);
+        }
+        
+        .confirmation-content {
+            padding: 20px;
+        }
+        
+        .order-section {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        
+        .order-section:last-child {
+            border-bottom: none;
+        }
+        
+        .order-items {
+            margin-top: 15px;
+        }
+        
+        .order-item {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        
+        .order-item:last-child {
+            border-bottom: none;
+        }
+        
+        .order-item-image {
+            width: 80px;
+            height: 80px;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .order-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .order-item-details {
+            flex: 1;
+        }
+        
+        .order-total {
+            font-weight: bold;
+            text-align: right;
+            font-size: 18px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .delivery-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .delivery-box {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .button-group button {
+            flex: 1;
+            padding: 10px;
+            cursor: pointer;
+        }
+        
+        .print-receipt {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        
+        .continue-shopping {
+            background-color: #fff;
+            color: var(--text-color);
+            border: 1px solid var(--text-color);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        
+        @media print {
+            .no-print {
+                display: none;
+            }
+            header, footer, .button-group {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="notification" class="notification"></div>
+    
+    <header>
+        <div class="logo">
+            <h1>Desi Door Express</h1>
+            <p>Elevate Your Entrance</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="cart-container">
+            <button id="cart-btn">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button id="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <!-- Cart items will be added here -->
+        </div>
+        <div class="cart-footer">
+            <div class="total">
+                <span>Total:</span>
+                <span id="cart-total">₹0</span>
+            </div>
+            <button id="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <div class="order-confirmation">
+        <div class="confirmation-header">
+            <div class="order-checkmark">
+                <i class="fas fa-check"></i>
+            </div>
+            <h2>Thank You for Your Order!</h2>
+            <p>Your order has been confirmed and is being processed.</p>
+        </div>
+        
+        <div class="confirmation-content">
+            <div class="order-section">
+                <h3>Order Summary</h3>
+                <div id="order-items" class="order-items">
+                    <!-- Order items will be added here -->
+                </div>
+                <div id="order-total" class="order-total">
+                    <!-- Order total will be added here -->
+                </div>
+            </div>
+            
+            <div class="order-section">
+                <h3>Delivery Information</h3>
+                <div id="delivery-info" class="delivery-info">
+                    <!-- Delivery info will be added here -->
+                </div>
+                <div class="delivery-box">
+                    <p><strong>Estimated Delivery:</strong></p>
+                    <p>Within 7-10 business days</p>
+                </div>
+            </div>
+            
+            <div class="button-group no-print">
+                <button class="continue-shopping" onclick="window.location.href='index.html'">
+                    <i class="fas fa-home"></i> Continue Shopping
+                </button>
+                <button class="print-receipt" onclick="window.print()">
+                    <i class="fas fa-print"></i> Print Receipt
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="no-print">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Desi Door Express</h3>
+                <p>Premium quality doors for Indian homes.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#products">Products</a></li>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="index.html#products">Wooden Doors</a></li>
+                    <li><a href="index.html#products">Security Doors</a></li>
+                    <li><a href="index.html#products">Designer Doors</a></li>
+                    <li><a href="index.html#products">Interior Doors</a></li>
+                    <li><a href="index.html#products">Exterior Doors</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Door Street, Industrial Area, New Delhi - 110001, India</p>
+                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                <p><i class="fas fa-envelope"></i> info@desidoorexpress.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Desi Door Express. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load order data from sessionStorage
+            const orderData = JSON.parse(sessionStorage.getItem('orderData') || '{}');
+            const cartItems = JSON.parse(sessionStorage.getItem('cartItems') || '[]');
+            const deliveryInfo = JSON.parse(sessionStorage.getItem('deliveryInfo') || '{}');
+            
+            // If no order data is found, redirect to homepage
+            if (!orderData.timestamp || cartItems.length === 0 || !deliveryInfo.name) {
+                window.location.href = 'index.html';
+                return;
+            }
+            
+            // Populate order items
+            const orderItemsContainer = document.getElementById('order-items');
+            cartItems.forEach(item => {
+                const orderItem = document.createElement('div');
+                orderItem.classList.add('order-item');
+                orderItem.innerHTML = `
+                    <div class="order-item-image">
+                        <img src="${item.imgSrc}" alt="${item.name}">
+                    </div>
+                    <div class="order-item-details">
+                        <h4>${item.name}</h4>
+                        <p>₹${item.price.toLocaleString('en-IN')} × ${item.quantity}</p>
+                        <p><strong>₹${(item.price * item.quantity).toLocaleString('en-IN')}</strong></p>
+                    </div>
+                `;
+                orderItemsContainer.appendChild(orderItem);
+            });
+            
+            // Populate order total
+            const orderTotalDiv = document.getElementById('order-total');
+            orderTotalDiv.innerHTML = `Total: <span>₹${orderData.total.toLocaleString('en-IN')}</span>`;
+            
+            // Populate delivery information
+            const deliveryInfoDiv = document.getElementById('delivery-info');
+            deliveryInfoDiv.innerHTML = `
+                <div>
+                    <p><strong>Name:</strong></p>
+                    <p>${deliveryInfo.name}</p>
+                </div>
+                <div>
+                    <p><strong>Phone:</strong></p>
+                    <p>${deliveryInfo.phone}</p>
+                </div>
+                <div>
+                    <p><strong>Address:</strong></p>
+                    <p>${deliveryInfo.address}</p>
+                </div>
+                <div>
+                    <p><strong>Location:</strong></p>
+                    <p>${deliveryInfo.city}, ${deliveryInfo.state}, ${deliveryInfo.zip}</p>
+                </div>
+                <div>
+                    <p><strong>Payment Method:</strong></p>
+                    <p>${deliveryInfo.paymentMethod === 'cod' ? 'Cash on Delivery' : 'Online Payment'}</p>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
