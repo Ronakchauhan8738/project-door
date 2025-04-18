@@ -1,0 +1,63 @@
+ 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+        
+        .sidebar {
+            width: 250px;
+            background: #660c48;
+            color: white;
+            transition: all 0.3s;
+            min-height: 100vh;
+            padding: 25px;
+        }
+        
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 25px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .card {
+            background:#2d2d2d ;
+            color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        i, a{
+            color: white;
+            text-decoration: none;
+        }
+        
+
+        .search-bar input{
+            width: 300px;
+            height: 40px;
+            padding: 10px;
+            border-radius: 20px;
+            outline: none;
+        }
+
+        #logout{
+            color: red;
+        }

@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Megastar</title>
+    <meta name="description" content="Premium quality doors with Indian designs and features">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="notification" class="notification"></div>
+
+    <header>
+        <div class="logo">
+
+            <h1>Megastar</h1>
+            <p>Elevate Your Entrance</p>
+
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="cart-container">
+            <button id="cart-btn">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button id="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <!-- Cart items will be added here -->
+        </div>
+        <div class="cart-footer">
+            <div class="total">
+                <span>Total:</span>
+                <span id="cart-total">₹0</span>
+            </div>
+            <button id="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Premium Quality Doors</h2>
+            <p>Secure Your Home with Style</p>
+            <a href="#products" class="btn-primary">Explore Collection</a>
+        </div>
+    </section>
+
+    <section id="products" class="products">
+        <h2 class="section-title">Our Premium Collection</h2>
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All Doors</button>
+            <button class="filter-btn" data-filter="wooden">Premium</button>
+            <button class="filter-btn" data-filter="security">Security</button>
+            <button class="filter-btn" data-filter="designer">Designer</button>
+
+        </div>
+        <div class="product-grid">
+            <div class="product-card" data-category="wooden">
+                <div class="product-image">
+                    <img src="public/lovable-uploads/7e601890-94fc-4716-8ba4-92a24f323d26.png"
+                        alt="Elegant Wooden Door">
+                    <div class="product-tag">Bestseller</div>
+                </div>
+                <div class="product-info">
+                    <h3>Elegant Wooden Door</h3>
+                    <div class="product-meta">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(120)</span>
+                        </div>
+                        <div class="price">₹18,999</div>
+                    </div>
+                    <p>Premium teak wood door with glass panels and elegant finish.</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart" data-id="1" data-name="Elegant Wooden Door" data-price="18999">Add
+                            to Cart</button>
+                        <button class="buy-now" data-id="1" data-name="Elegant Wooden Door" data-price="18999"
+                            onclick="fetchName(this)">Buy
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="wooden">
+                <div class="product-image">
+                    <img src="public/lovable-uploads/mod door.jpeg" alt="Modern Panel Door">
+                </div>
+                <div class="product-info">
+                    <h3>Modern Panel Door</h3>
+                    <div class="product-meta">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(85)</span>
+                        </div>
+                        <div class="price">₹34,999</div>
+                    </div>
+                    <p>Modern panel doors, where clean lines meet crafted elegance.</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart" data-id="2" data-name="Modern Panel Door" data-price="34999">Add to
+                            Cart</button>
+                        <button class="buy-now" data-id="2" data-name="Modern Panel Door" data-price="34999"
+                            onclick="fetchName()">Buy
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="product-card" data-category="wooden">
+                <div class="product-image">
+                    <img src="public/lovable-uploads/window door.jpg" alt="Modern Panel Door">
+                </div>
+                <div class="product-info">
+                    <h3>Window Door</h3>
+                    <div class="product-meta">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(85)</span>
+                        </div>
+                        <div class="price">₹37,999</div>
+                    </div>
+                    <p>Elevate your space with timeless windows and doors — crafted for distinction.</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart" data-id="2" data-name="Modern Panel Door" data-price="34999">Add to
+                            Cart</button>
+                        <button class="buy-now" data-id="2" data-name="Modern Panel Door" data-price="34999"
+                            onclick="fetchName(this)">Buy
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="security">
+                <div class="product-image">
+                    <img src="public/lovable-uploads/security door.jpg" alt="Security Steel Door">
+                    <div class="product-tag">New</div>
+                </div>
+                <div class="product-info">
+                    <h3>Security Steel Door</h3>
+                    <div class="product-meta">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(230)</span>
+                        </div>
+                        <div class="price">₹32,499</div>
+                    </div>
+                    <p>High-security steel door with advanced locking system.</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart" data-id="3" data-name="Security Steel Door" data-price="32499">Add
+                            to Cart</button>
+                        <button class="buy-now" data-id="3" data-name="Security Steel Door" data-price="32499"
+                            onclick="fetchName(this)">Buy
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="designer">
+                <div class="product-image">
+                    <img src="public/lovable-uploads/5cd7c3f8-2d00-47b3-b368-80e1c312fc26.png"
+                        alt="Designer Pattern Door">
+                </div>
+                <div class="product-info">
+                    <h3>Designer Pattern Door</h3>
+                    <div class="product-meta">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(64)</span>
+                        </div>
+                        <div class="price">₹28,999</div>
+                    </div>
+                    <p>Artistic pattern door with premium finish and durability.</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart" data-id="4" data-name="Designer Pattern Door" data-price="28999">Add
+                            to Cart</button>
+                        <button class="buy-now" data-id="4" data-name="Designer Pattern Door" data-price="28999"
+                            onclick="fetchName(this)">Buy
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="security">
+                <div class="product-image">
+                    <img src="public/lovable-uploads/feature.avif" alt="Safety Features Door">
+                    <div class="product-tag">Popular</div>
+                </div>
+                <div class="product-info">
+                    <h3>Safety Features Door</h3>
+                    <div class="product-meta">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(147)</span>
+                        </div>
+                        <div class="price">₹35,999</div>
+                    </div>
+                    <p>High-security door with multiple safety features and fire resistance.</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart" data-id="5" data-name="Safety Features Door" data-price="35999">Add
+                            to Cart</button>
+                        <button class="buy-now" data-id="5" data-name="Safety Features Door" data-price="35999"
+                            onclick="fetchName(this)">Buy
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="designer">
+                <div class="product-image">
+                    <img src="public/lovable-uploads/3f1d83a4-f74a-487f-87fb-d8553cf927f7.png"
+                        alt="Vrishabh Luxury Door">
+                </div>
+                <div class="product-info">
+                    <h3>Vrishabh Luxury Door</h3>
+                    <div class="product-meta">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(92)</span>
+                        </div>
+                        <div class="price">₹21,999</div>
+                    </div>
+                    <p>Premium luxury door for modern homes with textured finish.</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart" data-id="6" data-name="Vrishabh Luxury Door" data-price="21999">Add
+                            to Cart</button>
+                        <button class="buy-now" data-id="6" data-name="Vrishabh Luxury Door" data-price="21999"
+                            onclick="fetchName(this)">Buy
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="security">
+                <div class="product-image">
+                    <img src="public/lovable-uploads/security feature.avif" alt="Modern Steel Security Door">
+                </div>
+                <div class="product-info">
+                    <h3>Modern Steel Security Door</h3>
+                    <div class="product-meta">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(78)</span>
+                        </div>
+                        <div class="price">₹38,499</div>
+                    </div>
+                    <p>Contemporary design with premium security features.</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart" data-id="7" data-name="Modern Steel Security Door"
+                            data-price="38499">Add to Cart</button>
+                        <button class="buy-now" data-id="7" data-name="Modern Steel Security Door" data-price="38499"
+                            onclick="fetchName(this)">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="wooden">
+                <div class="product-image">
+                    <img src="public/lovable-uploads/mother and son.jpg" alt="Modern Panel Door">
+                </div>
+                <div class="product-info">
+                    <h3>Mother and Son Door</h3>
+                    <div class="product-meta">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(85)</span>
+                        </div>
+                        <div class="price">₹36,885</div>
+                    </div>
+                    <p>Seamless entry, double the convenience.</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart" data-id="2" data-name="Modern Panel Door" data-price="34999">Add to
+                            Cart</button>
+                        <button class="buy-now" data-id="2" data-name="Modern Panel Door" data-price="34999"
+                            onclick="fetchName(this)">Buy
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="wooden">
+                <div class="product-image">
+                    <img src="public/lovable-uploads/glass door.jpg" alt="Modern Panel Door">
+                </div>
+                <div class="product-info">
+                    <h3>Glass Door</h3>
+                    <div class="product-meta">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(85)</span>
+                        </div>
+                        <div class="price">₹18,885</div>
+                    </div>
+                    <p>Let the light in with style — elegant glass doors for modern spaces..</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart" data-id="2" data-name="Modern Panel Door" data-price="34999">Add to
+                            Cart</button>
+                        <button class="buy-now" data-id="2" data-name="Modern Panel Door" data-price="34999"
+                            onclick="fetchName(this)">Buy
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="wooden">
+                <div class="product-image">
+                    <img src="public/lovable-uploads/Twin doors.webp" alt="Modern Panel Door">
+                </div>
+                <div class="product-info">
+                    <h3>Twin Doors</h3>
+                    <div class="product-meta">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(85)</span>
+                        </div>
+                        <div class="price">₹46,964</div>
+                    </div>
+                    <p>Built for your safety, designed for your home.</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart" data-id="2" data-name="Modern Panel Door" data-price="34999">Add to
+                            Cart</button>
+                        <button class="buy-now" data-id="2" data-name="Modern Panel Door" data-price="34999"
+                            onclick="fetchName(this)">Buy
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="wooden">
+                <div class="product-image">
+                    <img src="public/lovable-uploads/glass window.jpg" alt="Modern Panel Door">
+                </div>
+                <div class="product-info">
+                    <h3>Glass Window</h3>
+                    <div class="product-meta">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(85)</span>
+                        </div>
+                        <div class="price">₹31,999</div>
+                    </div>
+                    <p>Where transparency meets style — premium glass doors for a brighter, open feel.</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart" data-id="2" data-name="Modern Panel Door" data-price="34999">Add to
+                            Cart</button>
+                        <button class="buy-now" data-id="2" data-name="Modern Panel Door" data-price="34999"
+                            onclick="fetchName(this)">Buy
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="wooden">
+                <div class="product-image">
+                    <img src="public/lovable-uploads/single.jpg" alt="Modern Panel Door">
+                </div>
+                <div class="product-info">
+                    <h3>Single Door</h3>
+                    <div class="product-meta">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(85)</span>
+                        </div>
+                        <div class="price">₹26,219</div>
+                    </div>
+                    <p>From classic to contemporary, find the perfect door to fit your vision.</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart" data-id="2" data-name="Modern Panel Door" data-price="34999">Add to
+                            Cart</button>
+                        <button class="buy-now" data-id="2" data-name="Modern Panel Door" data-price="34999"
+                            onclick="fetchName(this)()">Buy
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="wooden">
+                <div class="product-image">
+                    <img src="public/lovable-uploads/utkarsh.jpg" alt="Modern Panel Door">
+                </div>
+                <div class="product-info">
+                    <h3>Utkarsh Door</h3>
+                    <div class="product-meta">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(85)</span>
+                        </div>
+                        <div class="price">₹28,550</div>
+                    </div>
+                    <p>Step into style — premium doors for every home and every need.</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart" data-id="2" data-name="Modern Panel Door" data-price="34999">Add to
+                            Cart</button>
+                        <button class="buy-now" data-id="2" data-name="Modern Panel Door" data-price="34999"
+                            onclick="fetchName(this)()">Buy
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="wooden">
+                <div class="product-image">
+                    <img src="public/lovable-uploads/aluminium.jpg" alt="Modern Panel Door">
+                </div>
+                <div class="product-info">
+                    <h3>Aluminium Glass Door</h3>
+                    <div class="product-meta">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(85)</span>
+                        </div>
+                        <div class="price">₹48,499</div>
+                    </div>
+                    <p>Crafted for comfort, built for security — doors that open to a better tomorrow.</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart" data-id="2" data-name="Modern Panel Door" data-price="34999">Add to
+                            Cart</button>
+                        <button class="buy-now" data-id="2" data-name="Modern Panel Door" data-price="34999"
+                            onclick="fetchName(this)()">Buy
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="designer">
+                <div class="product-image">
+                    <img src="public/lovable-uploads/0fe03054-2fc9-4060-9102-402f41f0cf43.png"
+                        alt="Kutumb Designer Door">
+                    <div class="product-tag">Limited</div>
+                </div>
+                <div class="product-info">
+                    <h3>Kutumb Designer Door</h3>
+                    <div class="product-meta">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(103)</span>
+                        </div>
+                        <div class="price">₹45,999</div>
+                    </div>
+                    <p>Artistic designer door with premium metallic finish. Limited edition.</p>
+                    <div class="product-actions">
+                        <button class="add-to-cart" data-id="8" data-name="Kutumb Designer Door" data-price="45999">Add
+                            to Cart</button>
+                        <button class="buy-now" data-id="8" data-name="Kutumb Designer Door" data-price="45999"
+                            onclick="fetchName(this)()">Buy
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <h2 class="section-title">Why Choose Our Doors?</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>High Security</h3>
+                <p>Advanced locking systems and reinforced materials for ultimate security.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-fire"></i>
+                </div>
+                <h3>Fire Resistant</h3>
+                <p>Our doors provide up to 90 minutes of fire resistance protection.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-tint-slash"></i>
+                </div>
+                <h3>Water Resistant</h3>
+                <p>Specially treated to resist water damage and warping.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-bug"></i>
+                </div>
+                <h3>Termite Proof</h3>
+                <p>Anti-termite treatment ensures long-lasting performance.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>Eco-Friendly</h3>
+                <p>Sustainable materials and eco-conscious manufacturing processes.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3>Easy Installation</h3>
+                <p>Professional installation service available across India.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <p>"The security door I purchased has given me great peace of mind. The quality is excellent and the
+                        installation service was professional."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <h4>Rajesh Sharma</h4>
+                        <p>Delhi</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <p>"I love the designer door I purchased. It has completely transformed the entrance of my home and
+                        everyone compliments it."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <h4>Priya Patel</h4>
+                        <p>Mumbai</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <p>"Excellent quality and service. The door was delivered on time and the cash on delivery option
+                        made the purchase convenient."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <h4>Sunil Kumar</h4>
+                        <p>Bangalore</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2 class="section-title">About Megastar</h2>
+            <p>Megastar is India's premier door manufacturer and supplier with over 15 years of experience in
+                crafting high-quality, secure, and stylish doors for homes and businesses across the country.</p>
+            <p>Our mission is to provide Indian homes with doors that combine traditional craftsmanship with modern
+                security features, creating entrances that are both beautiful and secure.</p>
+            <a href="#contact" class="btn-secondary">Contact Us</a>
+        </div>
+        <div class="about-image">
+            <img src="public/lovable-uploads/3f1d83a4-f74a-487f-87fb-d8553cf927f7.png" alt="Megastar Door">
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3>Address</h3>
+                        <p>D C COLONY, MEERUT ROAD KARNAL, RAJINDER NAGAR, Karnal, Karnal, Haryana</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h3>Phone</h3>
+                        <p>+91 9813890333</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>Email</h3>
+                        <p>tradersshreeram44@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h3>Working Hours</h3>
+                        <p>Monday - Saturday: 9AM - 7PM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Send us a message</h3>
+                <form action="test.php" method="post">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="Your Phone" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="state" name="state" required>
+                            <option value="">Select Your State</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Odisha">Odisha</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="West Bengal">West Bengal</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Sumit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Checkout</h2>
+            <div id="checkout-items" class="checkout-items">
+                <!-- Checkout items will be added here -->
+            </div>
+            <div class="checkout-total">
+                <span>Total:</span>
+                <span id="checkout-total">₹0</span>
+            </div>
+            <form action="order.php" method="post">
+                <div class="form-group">
+                    <label for="checkout-name">Name:</label>
+                    <input type="text" id="checkout-name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkout-address">Address:</label>
+                    <input type="text" id="checkout-address" name="address" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkout-city">City:</label>
+                    <input type="text" id="checkout-city" name="city" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkout-state">State:</label>
+                    <select id="checkout-state" name="state" required>
+                        <option value="">Select Your State</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Uttarakhand">Uttarakhand</option>
+                        <option value="West Bengal">West Bengal</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="checkout-zip">Zip Code:</label>
+                    <input type="text" id="checkout-zip" name="zip" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkout-phone">Phone:</label>
+                    <input type="tel" id="checkout-phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label>Payment Method:</label>
+                    <input type="radio" id="cod" name="payment" value="cod" checked>
+                    <label for="cod">Cash on Delivery</label>
+                    <input type="radio" id="online" name="payment" value="online">
+                    <label for="online">Online Payment</label>
+                </div>
+                <input type="text" id="checkout-products" name="products" value="" style="display: none;">
+                <button type="submit" class="btn-primary">Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="no-print">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Megastar doors</h3>
+                <p>Premium quality doors for Indian homes.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#products">Products</a></li>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="index.html#products">Wooden Doors</a></li>
+                    <li><a href="index.html#products">Security Doors</a></li>
+                    <li><a href="index.html#products">Designer Doors</a></li>
+                    <li><a href="index.html#products">Interior Doors</a></li>
+                    <li><a href="index.html#products">Exterior Doors</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> D C COLONY, MEERUT ROAD KARNAL, RAJINDER NAGAR, Karnal, Karnal,
+                    Haryana</p>
+                <p><i class="fas fa-phone"></i> +91 9813890333</p>
+                <p><i class="fas fa-envelope"></i> tradersshreeram44@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Desi Door Express. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        function fetchName(button) {
+            const card = button.closest(".product-card"); // get the related card
+            const productName = card.querySelector(".product-info h3"); // get h3 inside that card
+
+            if (productName) {
+                console.log(productName.innerText); // log it or use it
+                document.getElementById("checkout-products").value = productName.innerText;
+            }
+        };
+
+    </script>
+</body>
+
+</html>
