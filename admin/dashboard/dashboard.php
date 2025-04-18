@@ -5,7 +5,7 @@ if (!isset($_SESSION['admin'])) {
     exit();
 }
 
-// Load header and footer with HTML content in between
+// Load header and footer with HTML content in between hello ronak
 
 readfile('dashboard.html');
 ?>
